@@ -31,10 +31,9 @@ class Student
     SQL
     DB[:conn].execute(sql, self.name, self.grade)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
-    # self.id = @id
   end
   
-  def create(args)
+  def self.create(args)
     student = Student.new(args[:name], args[:grade])
     student.save()
     student
