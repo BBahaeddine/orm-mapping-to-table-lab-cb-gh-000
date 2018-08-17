@@ -32,7 +32,10 @@ class Student
     DB[:conn].execute(sql, name, grade)
   end
   
-  def create 
+  def create(args)
+    student = self.new(args[:name], args[:grade])
+    student.save(student.name, student.grade)
+    student
   end
   
 end
