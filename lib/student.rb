@@ -33,7 +33,7 @@ class Student
   end
   
   def create(args)
-    student = self.new(args[:name], args[:grade])
+    student = Student.new(args[:name], args[:grade])
     student.save()
     student
   end
